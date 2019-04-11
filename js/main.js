@@ -45,15 +45,15 @@ function showError(error) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;    
     
-    const geoUrlWeather = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${openWeatherMapId}`;
-    const geoUrlForecast = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&APPID=${openWeatherMapId}`;
+    const geoUrlWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${openWeatherMapId}`;
+    const geoUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&APPID=${openWeatherMapId}`;
 
     fetch(geoUrlWeather)
     .then(response => response.json() )
     .then(function (response) {
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
-        weatherIcon.innerHTML = `<img src="${'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}" height="75">`;
+        weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}" height="75">`;
         weatherDescription.innerHTML = response.weather[0].main;
         pressure.innerHTML = response.main.pressure + " mBar";
         humidity.innerHTML = response.main.humidity + " %";    
@@ -94,15 +94,15 @@ function showError(error) {
 
 function weatherNow(){ 
     const city = cityName.value;
-    const urlWeather = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${openWeatherMapId}`;
-    const urlForcast = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${openWeatherMapId}`;
+    const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${openWeatherMapId}`;
+    const urlForcast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${openWeatherMapId}`;
 
     fetch(urlWeather)
     .then(response => response.json())
     .then(function (response) {
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
-        weatherIcon.innerHTML = `<img src="${'http://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}" height="75">`;
+        weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}" height="75">`;
         weatherDescription.innerHTML = response.weather[0].main;
         // temperatureMax.innerHTML = response.main.temp_max.toFixed(0) + "&#186 <span> / </span>";
         // temperatureMin.innerHTML = response.main.temp_min.toFixed(0) + "&#186";
@@ -131,7 +131,7 @@ function weatherNow(){
                 dateOfWeek += `
                 <div>
                         <p class="date">${response.list[i].dt_txt.slice(0,10)}</p>
-                        <img src="${'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png'}">
+                        <img src="${'https://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png'}">
                         <p class="predicted-weather-conditions">${response.list[i].weather[0].main}</p>
                         <p class="predicted-max-min">${response.list[i].main.temp_max.toFixed(0) + "&#186"}</p> 
                 </div>`;
