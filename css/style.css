@@ -1,0 +1,125 @@
+body {
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    color: white;
+    background-image: linear-gradient( #2187ED, #4493e2);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px 0px rgba(128, 128, 128, 1);
+}
+
+#favourite {
+    font-size: 20px;
+    float: left;
+    vertical-align: middle;
+}
+
+#convert-temperature {
+    text-align: right;
+    font-size: 15px;
+    float: right;
+    cursor: pointer;
+}
+
+#celzius:active, #fahrenheit:active {
+    font-weight: 700px;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    width: 70%;
+    text-align: left;
+}
+
+::placeholder {
+    color: white;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button img {
+    width: 20px;
+}
+
+#search-location {
+    text-align: right;
+}
+
+#current-weather-conditions {
+    padding-top: 10px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+#temperature-degree {
+    margin-top: 30px;
+}
+
+#weather-description, #expected-max-min {
+    padding-bottom: 10px;
+}
+
+/* #weather-icon {
+    height: 75px;
+} */
+
+hr {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+#pressure, #humidity, #wind-direction-speed, #clouds {
+    font-size: 17px;
+    padding: 0 0 15px 15px;
+}
+
+.first-row {
+    padding-top: 15px;
+}
+
+.second-row {
+    padding-bottom: 15px;
+}
+
+.weekly-forecast, #additional-info {
+    font-size: 12px;
+}
+
+#additional-info a {
+    text-decoration: none;
+}
+
+.weekly-forecast {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.weekly-forecast div {
+    padding-top: 20px;
+}

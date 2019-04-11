@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Now!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
+
+<body>
+    <div class="container text-center">
+        <header class="row">
+            <p>
+                <span class="col-sm-3"><i id="favourite" class="fas fa-heart"></i> </span>
+                <span id="search-location" class="col-sm-6">                    
+                        <input type="text" id="enter-location" placeholder="Location..." required onfocus="value=''">
+                        <button type="submit" value="" id="search"><img src="../images/search.svg" alt="search-magnifing-glass"></button>
+                    
+                </span>
+                <span id="convert-temperature" class="col-sm-3"><span id="celzius">C&#186;</span> / <span id="fahrenheit"></span>F</span>
+            </p>
+        </header>
+
+        <main>
+            <div id="current-weather-conditions">
+                <h4 id="location-title"></h4>
+                <h1 id="temperature-degree"></h1>
+                <div id="weather-icon"></div>
+                <h4 id="weather-description"></h4>
+                <h5 id="expected-max-min">
+                    <span id="temperature-max"></span>
+                    <span id="temperature-min"></span></h5>
+            </div>
+        </main>
+
+        <hr>
+
+        <div class="more-info">
+            <div class="row">
+                <div class="pressure-info col-sm-6">
+                    <p>Pressure</p>
+                    <p><strong><i class="fas fa-clock"></i><span id="pressure"></span></strong></p>
+                </div>
+                <div class="humidity-info col-sm-6">
+                    <p>Humidity</p>
+                    <p><strong><i class="fas fa-tint"></i><span id="humidity"></span></strong></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="wind-info col-sm-6">
+                    <p>Wind</p>
+                    <p><strong><i class="fas fa-wind"></i><span id="wind-direction-speed"></span></strong></p>
+                </div>
+                <div class="cloudiness-info col-sm-6">
+                    <p>Cloudiness</p>
+                    <p><strong><i class="fas fa-cloud"></i><span id="clouds"></span></strong></p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <section>
+            <h6 class="weekly-forecast" id="weekly"></h6>
+        </section>
+
+        
+
+        <section id="additional-info" class="col-sm-12">
+                <hr>
+            <h6>Want to visit <span id="location"></span>?<br>Get some basic info <a href="">here</a>
+            </h6>
+        </section>
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
