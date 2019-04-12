@@ -1,5 +1,14 @@
-body {
+html, body {
+    box-sizing: border-box;
     height: 100vh;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h4 {
+    font-size: 20px;
 }
 
 .container {
@@ -11,10 +20,13 @@ body {
     box-shadow: 5px 5px 5px 0px rgba(128, 128, 128, 1);
 }
 
-#favourite {
+#current-location {
     font-size: 20px;
     float: left;
-    vertical-align: middle;
+}
+
+#current-location[type=button]{
+-webkit-appearance: none;
 }
 
 #convert-temperature {
@@ -24,23 +36,22 @@ body {
     cursor: pointer;
 }
 
-#celzius:active, #fahrenheit:active {
+#celzius:active, 
+#fahrenheit:active {
     font-weight: 700px;
 }
+
+input, ::placeholder {
+    color: white;
+    font-size: 15px;    
+} 
 
 input {
     border: none;
     background-color: transparent;
-    font-size: 15px;
-    color: white;
     font-weight: 500;
     width: 70%;
     text-align: left;
-}
-
-::placeholder {
-    color: white;
-    font-style: italic;
 }
 
 input:focus {
@@ -66,24 +77,16 @@ button img {
 }
 
 #current-weather-conditions {
-    padding-top: 10px;
-}
-
-h1 {
-    font-size: 60px;
+    padding-top: 20px;
 }
 
 #temperature-degree {
-    margin-top: 30px;
+    padding: 30px 0 15px;
 }
 
-#weather-description, #expected-max-min {
-    padding-bottom: 10px;
+#weather-description {
+    padding: 15px 0 15px;
 }
-
-/* #weather-icon {
-    height: 75px;
-} */
 
 hr {
     display: block;
@@ -94,30 +97,23 @@ hr {
     border-width: 0.5px;
 }
 
-#pressure, #humidity, #wind-direction-speed, #clouds {
+.fas {
+    vertical-align: middle;
+}
+
+#pressure, 
+#humidity, 
+#wind-direction-speed, 
+#clouds {
     font-size: 17px;
-    padding: 0 0 15px 15px;
+    padding: 0 0 35px 15px;
 }
 
-.first-row {
-    padding-top: 15px;
-}
-
-.second-row {
-    padding-bottom: 15px;
-}
-
-.weekly-forecast, #additional-info {
+.weekly-forecast{
     font-size: 12px;
-}
-
-#additional-info a {
-    text-decoration: none;
-}
-
-.weekly-forecast {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto auto;
 }
 
 .weekly-forecast div {
