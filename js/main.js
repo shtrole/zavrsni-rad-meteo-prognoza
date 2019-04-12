@@ -77,7 +77,7 @@ function showError(error) {
             dateOfWeek += `
             <div>
                     <p class="date">${response.list[i].dt_txt.slice(0,10)}</p>
-                    <img src="${'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png'}">
+                    <img src="${'https://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png'}">
                     <p class="predicted-weather-conditions">${response.list[i].weather[0].main}</p>
                     <p class="predicted-max-min">${response.list[i].main.temp_max.toFixed(0) + "&#186"}</p> 
             </div>`;
