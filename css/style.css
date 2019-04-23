@@ -11,6 +11,14 @@ h4 {
     font-size: 20px;
 }
 
+.fas {
+    vertical-align: middle;
+}
+
+.hide {
+    display: none;
+}
+
 .container {
     max-width: 400px;
     color: white;
@@ -19,6 +27,8 @@ h4 {
     padding: 20px;
     box-shadow: 5px 5px 5px 0px rgba(128, 128, 128, 1);
 }
+
+/* Header search line css */
 
 #current-location {
     font-size: 20px;
@@ -76,6 +86,8 @@ button img {
     text-align: right;
 }
 
+/* Main weather block css  */
+
 #current-weather-conditions {
     padding-top: 20px;
 }
@@ -97,9 +109,7 @@ hr {
     border-width: 0.5px;
 }
 
-.fas {
-    vertical-align: middle;
-}
+/* More weather info block css */
 
 #pressure, 
 #humidity, 
@@ -109,11 +119,13 @@ hr {
     padding: 0 0 35px 15px;
 }
 
+/* Weekly forecast css */
+
 .weekly-forecast{
     font-size: 12px;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
 }
 
 .weekly-forecast div {
