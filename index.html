@@ -24,15 +24,15 @@
 
 <body>
     <div class="container text-center">
-        <!-- Header line -->
+        <!-- Header search line -->
         <header class="row">            
-                <span class="col-sm-3"><i class="fas fa-map-marker-alt" type="button" onclick="window.location.reload()" id="current-location"></i> </span>
-                <span id="search-location" class="col-sm-6">                    
+                <span class="col-3"><i class="fas fa-map-marker-alt" onclick="window.location.reload()" id="current-location"></i> </span>
+                <span id="search-location" class="col-6">                    
                         <input type="text" id="enter-location" placeholder="Location..." required onfocus="value=''">
                         <button type="submit" value="" id="search"><img src="./images/search.svg" alt="search-magnifing-glass"></button>
                     
                 </span>
-                <span id="convert-temperature" class="col-sm-3"><span id="celzius">C&#186;</span> / <span id="fahrenheit"></span>F</span>
+                <span id="convert-temperature" class="col-3"><span id="celzius">C&#186;</span> / <span id="fahrenheit"></span>F</span>
             
         </header>
 
@@ -49,25 +49,24 @@
         <hr>
         
         <!-- More weather info block -->
-        <div id="more-info">
-               
+        <div id="more-info">               
             <div class="row">
-                <div class="pressure-info col-sm-6">
+                <div class="pressure-info col-6">
                     <p>Pressure</p>
                     <p><strong><i class="fas fa-clock fa-2x"></i><span id="pressure"></span></strong></p>
                 </div>
-                <div class="humidity-info col-sm-6">
+                <div class="humidity-info col-6">
                     <p>Humidity</p>
                     <p><strong><i class="fas fa-tint fa-2x"></i><span id="humidity"></span></strong></p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="wind-info col-sm-6">
+                <div class="wind-info col-6">
                     <p>Wind</p>
                     <p><strong><i class="fas fa-wind fa-2x"></i><span id="wind-direction-speed"></span></strong></p>
                 </div>
-                <div class="cloudiness-info col-sm-6">
+                <div class="cloudiness-info col-6">
                     <p>Cloudiness</p>
                     <p><strong><i class="fas fa-cloud fa-2x"></i><span id="clouds"></span></strong></p>
                 </div>
@@ -75,12 +74,10 @@
         </div>
 
         <hr>
-
         
         <!-- Weekly forecast -->
         <section>            
-            <h6 class="weekly-forecast" id="weekly"></h6>
-            
+            <h6 class="weekly-forecast" id="weekly"></h6>            
         </section>
         
     </div>
