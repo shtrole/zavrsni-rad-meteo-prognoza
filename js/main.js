@@ -1,7 +1,7 @@
 const s = selektor => document.getElementById(selektor);
 const openWeatherMapId = 'e35f9d03b9cf7b1e57d49c09254d495b';
 
-const message = s('current-weather-conditions')
+const message = s('current-weather-conditions');
 const search = s('search');
 const cityName = s('enter-location');
 const currentWeather = s('current-weather-conditions');
