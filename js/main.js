@@ -9,13 +9,11 @@ const locationTitle = s('location-title');
 const temperatureDegree= s('temperature-degree');
 const weatherIcon = s('weather-icon');
 const weatherDescription = s('weather-description');
-const temperatureMax = s('temperature-max');
-const temperatureMin = s('temperature-min');
+const moreInfo = s('more-info');
 const pressure = s('pressure');
 const humidity = s('humidity');
 const windDirectionSpeed = s('wind-direction-speed');
 const clouds = s('clouds');
-const moreInfo = s('more-info');
 const weekly = s('weekly');
 
 function getLocation() {
@@ -96,18 +94,18 @@ function weatherNow(){
     fetch(urlWeather)
     .then(response => response.json())
     .then(function (response) {
-        if (response[0] == undefined) {
+        if (response.cod == 404) {
             locationTitle.innerHTML = "Location not found. Try again...";
             temperatureDegree.innerHTML = "";
             weatherIcon.innerHTML = "";
-            weatherDescription.innerHTML = "";
-            pressure.innerHTML = "";
-            humidity.innerHTML = "";
-            windDirectionSpeed.innerHTML = "";
-            clouds.innerHTML = "";
+            weatherDescription.innerHTML = "";            
+            moreInfo.classList.add("hide");
+            // humidity.innerHTML = "";
+            // windDirectionSpeed.innerHTML = "";
+            // clouds.innerHTML = "";
             weekly.innerHTML = "";
-
-        
+          } 
+        else if (response.cod == 200){        
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}" height="75">`;
@@ -116,19 +114,19 @@ function weatherNow(){
         humidity.innerHTML = response.main.humidity + " %";
         windDirectionSpeed.innerHTML = degToDir(response.wind.deg) + "&nbsp&nbsp" + response.wind.speed + "m/s";
         clouds.innerHTML = response.clouds.all  + " %";
-    }
+          }
     })    
 
     fetch(urlForecast)
         .then(response => response.json())
         .then(function (response) { 
-
+            if (response.cod == 200){
             let dateOfWeek = "";
             const today = new Date().toString().slice(0, 10);
             const timeOfDayForCond = '15:00:00';  
 
             for (let i = 1; i <= 39; i++){
-                if (response.list[i].dt_txt.slice(0,10) != today && response.list[i].dt_txt.slice(11,19) == timeOfDayForCond ){
+                if (response.list[i].dt_txt.slice(0,10) != today && response.list[i].dt_txt.slice(11,19) == timeOfDayForCond){
                 dateOfWeek += `
                 <div>
                         <p class="date">${response.list[i].dt_txt.slice(0,10)}</p>
@@ -138,7 +136,8 @@ function weatherNow(){
                 </div>`;
                 } 
             }
-            weekly.innerHTML = dateOfWeek;    
+            weekly.innerHTML = dateOfWeek;   
+          } 
         })
 
     cityName.value = "Location... ";
