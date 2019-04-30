@@ -3,12 +3,14 @@ html, body {
     height: 100vh;
 }
 
-h1 {
-    font-size: 50px;
+.bigger-font {
+    font-size: 45px;
+    font-weight: 500;
 }
 
-h4 {
-    font-size: 20px;
+.big-font {
+    font-size: 19px;
+    font-weight: 500;
 }
 
 .fas {
@@ -24,7 +26,7 @@ h4 {
     color: white;
     background-image: linear-gradient( #2187ED, #4493e2);
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     box-shadow: 5px 5px 5px 0px rgba(128, 128, 128, 1);
 }
 
@@ -37,18 +39,6 @@ h4 {
 
 #current-location[type=button]{
 -webkit-appearance: none;
-}
-
-#convert-temperature {
-    text-align: right;
-    font-size: 15px;
-    float: right;
-    cursor: pointer;
-}
-
-#celzius:active, 
-#fahrenheit:active {
-    font-weight: 700px;
 }
 
 input, ::placeholder {
@@ -121,8 +111,8 @@ hr {
 
 /* Weekly forecast css */
 
-.weekly-forecast{
-    font-size: 12px;
+.weekly-forecast {
+    font-size: 11px;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
@@ -130,4 +120,12 @@ hr {
 
 .weekly-forecast div {
     padding-top: 20px;
+}
+
+.predicted-weather-conditions {
+    font-weight: 700;
+}
+
+.predicted-max {
+    font-size: 15px;
 }
