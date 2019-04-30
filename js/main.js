@@ -1,7 +1,7 @@
 const s = selektor => document.getElementById(selektor);
 const openWeatherMapId = 'e35f9d03b9cf7b1e57d49c09254d495b';
 
-const message = s('current-weather-conditions');
+const message = s('current-weather-conditions')
 const search = s('search');
 const cityName = s('enter-location');
 const currentWeather = s('current-weather-conditions');
@@ -58,7 +58,7 @@ function showError(error) {
         pressure.innerHTML = response.main.pressure + " mBar";
         humidity.innerHTML = response.main.humidity + " %";    
 
-        windDirectionSpeed.innerHTML = degToDir(response.wind.deg) + "&nbsp&nbsp" + response.wind.speed + "m/s";
+        windDirectionSpeed.innerHTML = degToDir(response.wind.deg) + "&nbsp&nbsp" + response.wind.speed + " m/s";
         clouds.innerHTML = response.clouds.all  + " %";
     })    
         
@@ -74,10 +74,10 @@ function showError(error) {
             if (response.list[i].dt_txt.slice(0,10) != today && response.list[i].dt_txt.slice(11,19) == timeOfDayForCond ){
             dateOfWeek += `
             <div>
-                    <p class="date">${response.list[i].dt_txt.slice(0,10)}</p>
+                    <p>${response.list[i].dt_txt.slice(0,10)}</p>
                     <img src="${'https://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png'}">
                     <p class="predicted-weather-conditions">${response.list[i].weather[0].main}</p>
-                    <p class="predicted-max-min">${response.list[i].main.temp_max.toFixed(0) + "&#186"}</p> 
+                    <p class="predicted-max">${response.list[i].main.temp_max.toFixed(0) + "&#186"}</p> 
             </div>`;
             } 
         }
@@ -95,14 +95,11 @@ function weatherNow(){
     .then(response => response.json())
     .then(function (response) {
         if (response.cod == 404) {
-            locationTitle.innerHTML = "Location not found. Try again...";
+            locationTitle.innerHTML = "Location not found. Try again..." + "<br><br><br>" + `<i class="fas fa-cloud-rain fa-5x"></i>`;
             temperatureDegree.innerHTML = "";
             weatherIcon.innerHTML = "";
             weatherDescription.innerHTML = "";            
             moreInfo.classList.add("hide");
-            // humidity.innerHTML = "";
-            // windDirectionSpeed.innerHTML = "";
-            // clouds.innerHTML = "";
             weekly.innerHTML = "";
           } 
         else if (response.cod == 200){        
@@ -129,10 +126,10 @@ function weatherNow(){
                 if (response.list[i].dt_txt.slice(0,10) != today && response.list[i].dt_txt.slice(11,19) == timeOfDayForCond){
                 dateOfWeek += `
                 <div>
-                        <p class="date">${response.list[i].dt_txt.slice(0,10)}</p>
+                        <p>${response.list[i].dt_txt.slice(0,10)}</p>
                         <img src="${'https://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png'}">
                         <p class="predicted-weather-conditions">${response.list[i].weather[0].main}</p>
-                        <p class="predicted-max-min">${response.list[i].main.temp_max.toFixed(0) + "&#186"}</p> 
+                        <p class="predicted-max">${response.list[i].main.temp_max.toFixed(0) + "&#186"}</p> 
                 </div>`;
                 } 
             }
@@ -160,3 +157,9 @@ document.getElementById("enter-location").addEventListener("keyup", function(eve
         }
      event.preventDefault();
 });
+
+function refreshWeatherData() {
+  setInterval(function(){location.reload()}, 1800000);
+}
+
+refreshWeatherData();
