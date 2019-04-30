@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Weather Now - Weather forecast app">
+    <meta name="author" content="Maja Bakaric - Shtrole">
     <title>Weather Now!</title>
     <!-- jQuery, Popper & Bootstrap js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,28 +23,26 @@
         crossorigin="anonymous">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
+</head>    
 
 <body>
     <div class="container text-center">
-        <!-- Header search line -->
+        <!-- Header location search line -->
         <header class="row">            
                 <span class="col-3"><i class="fas fa-map-marker-alt" onclick="window.location.reload()" id="current-location"></i> </span>
-                <span id="search-location" class="col-6">                    
+                <span id="search-location" class="col-9">                    
                         <input type="text" id="enter-location" placeholder="Location..." required onfocus="value=''">
-                        <button type="submit" value="" id="search"><img src="./images/search.svg" alt="search-magnifing-glass"></button>
-                    
-                </span>
-                <span id="convert-temperature" class="col-3"><span id="celzius">C&#186;</span> / <span id="fahrenheit"></span>F</span>
-            
+                        <button type="submit" value="" id="search"><img src="./images/search.svg" alt="Search button image"></button>   
+                </span>            
         </header>
 
         <!-- Main weather block content -->
         <main>
             <div id="current-weather-conditions">
-                <h4 id="location-title"></h4>
-                <h1 id="temperature-degree"></h1>
+                <div id="location-title" class="big-font"></div>
+                <div id="temperature-degree" class="bigger-font"></div>
                 <div id="weather-icon"></div>
-                <h4 id="weather-description"></h4>
+                <div id="weather-description" class="big-font"></div>
             </div>
         </main>
 
@@ -50,34 +50,35 @@
         
         <!-- More weather info block -->
         <div id="more-info">               
-            <div class="row">
+            <section class="row">
                 <div class="pressure-info col-6">
-                    <p>Pressure</p>
+                    <h6>Pressure</h6>
                     <p><strong><i class="fas fa-clock fa-2x"></i><span id="pressure"></span></strong></p>
                 </div>
                 <div class="humidity-info col-6">
-                    <p>Humidity</p>
+                    <h6>Humidity</h6>
                     <p><strong><i class="fas fa-tint fa-2x"></i><span id="humidity"></span></strong></p>
                 </div>
-            </div>
+            </section>
 
-            <div class="row">
+            <section class="row">
                 <div class="wind-info col-6">
-                    <p>Wind</p>
+                    <h6>Wind</h6>
                     <p><strong><i class="fas fa-wind fa-2x"></i><span id="wind-direction-speed"></span></strong></p>
                 </div>
                 <div class="cloudiness-info col-6">
-                    <p>Cloudiness</p>
+                    <h6>Cloudiness</h6>
                     <p><strong><i class="fas fa-cloud fa-2x"></i><span id="clouds"></span></strong></p>
                 </div>
-            </div>
+            </section>
         </div>
 
         <hr>
         
         <!-- Weekly forecast -->
-        <section>            
-            <h6 class="weekly-forecast" id="weekly"></h6>            
+        <section>
+            <h6>Forecast for upcoming days</h6>            
+            <div class="weekly-forecast" id="weekly"></div>            
         </section>
         
     </div>
