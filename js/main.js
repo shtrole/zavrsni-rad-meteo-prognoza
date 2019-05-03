@@ -14,7 +14,9 @@ const pressure = s('pressure');
 const humidity = s('humidity');
 const windDirectionSpeed = s('wind-direction-speed');
 const clouds = s('clouds');
+const forecast = s('forecast');
 const weekly = s('weekly');
+
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -100,6 +102,7 @@ function weatherNow(){
             weatherIcon.innerHTML = "";
             weatherDescription.innerHTML = "";            
             moreInfo.classList.add("hide");
+            forecast.classList.add("hide");
             weekly.innerHTML = "";
           } 
         else if (response.cod == 200){        
