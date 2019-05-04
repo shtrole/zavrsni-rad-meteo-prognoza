@@ -27,7 +27,7 @@
 
 <body>
     <div class="container text-center">
-        <!-- Header location search line -->
+        <!-- Header location search line start -->
         <header class="row">            
                 <span class="col-3"><i class="fas fa-map-marker-alt" onclick="window.location.reload()" id="current-location"></i> </span>
                 <span id="search-location" class="col-9">                    
@@ -35,8 +35,9 @@
                         <button type="submit" value="" id="search"><img src="./images/search.svg" alt="Search button image"></button>   
                 </span>            
         </header>
+        <!-- Header location search line end -->
 
-        <!-- Main weather block content -->
+        <!-- Main weather block content start -->
         <main>
             <div id="current-weather-conditions">
                 <div id="location-title" class="big-font"></div>
@@ -46,10 +47,10 @@
             </div>
             <hr>
         </main>
-
+        <!-- Main weather block content end -->
        
         
-        <!-- More weather info block -->
+        <!-- More weather info block start -->
         <div id="more-info">               
             <section class="row">
                 <div class="pressure-info col-6">
@@ -74,14 +75,14 @@
             </section>
             <hr>
         </div>
-
+        <!-- More weather info block end -->        
         
-        
-        <!-- Weekly forecast -->
+        <!-- Weekly forecast section start -->
         <section>
-            <h6 id="forecast">Forecast for upcoming days</h6>            
+            <h6 id="forecast">Forecast for the upcoming days</h6>            
             <div class="weekly-forecast" id="weekly"></div>            
         </section>
+        <!-- Weekly forecast section end -->
         
     </div>
 
