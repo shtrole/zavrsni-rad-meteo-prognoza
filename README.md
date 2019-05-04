@@ -3,7 +3,7 @@ Završni rad u Cody Academy: Meteo prognoza za pojedini grad i datum
 
 Aplikacija služi za prikaz trenutnih vremenskih prilika i prognoze vremena za pojedini grad i datum.
 
-Kao izvor podataka koristi Open Weather Map API https://openweathermap.org/api za trenutne vremenske podatke i prognozu vremena za do 5 dana unapred.
+Kao izvor podataka koristi Open Weather Map API https://openweathermap.org/api (JSON format podataka) za trenutne vremenske podatke i prognozu vremena za do 5 dana unapred.
 
 Aplikacija ima opciju za automatski prikaz podataka prema trenutnoj lokaciji koja se dobija preko pretraživača, ukoliko je dozvoljen pristup geolokaciji. 
 
@@ -26,7 +26,7 @@ Final project at Cody Academy: Weather forecast for a particular city and date
 
 The application serves to display current weather data and weather forecasts for a particular city and date.
 
-App uses the Open Weather Map API https://openweathermap.org/api as a data source for current weather data and weather forecasts for up to 5 days in advance.
+App uses the Open Weather Map API https://openweathermap.org/api as a data source in JSON format for current weather data and weather forecasts for up to 5 days in advance.
 
 The application has the option to automatically display the data according to the current location obtained through the browser, if geolocation is allowed.
 
