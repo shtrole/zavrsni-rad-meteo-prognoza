@@ -1,7 +1,6 @@
 body {
     box-sizing: border-box;
-    height: 80vh;
- 
+    height: 80vh; 
 }
 
 .bigger-font {
@@ -88,7 +87,7 @@ button img {
 }
 
 #weather-description {
-    padding: 15px 0 15px;
+    padding: 10px 0 10px;
 }
 
 hr {
@@ -120,7 +119,7 @@ hr {
 }
 
 .weekly-forecast div {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .predicted-weather-conditions {
@@ -128,5 +127,5 @@ hr {
 }
 
 .predicted-max {
-    font-size: 15px;
+    font-size: 13px;
 }
