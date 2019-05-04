@@ -17,7 +17,6 @@ const clouds = s('clouds');
 const forecast = s('forecast');
 const weekly = s('weekly');
 
-
 function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getPosition, showError);
@@ -108,7 +107,7 @@ function weatherNow(){
         else if (response.cod == 200){        
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
-        weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}" height="75">`;
+        weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
         weatherDescription.innerHTML = response.weather[0].main;
         pressure.innerHTML = response.main.pressure + " mBar";
         humidity.innerHTML = response.main.humidity + " %";
