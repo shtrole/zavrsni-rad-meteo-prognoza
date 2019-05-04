@@ -1,7 +1,8 @@
+// Variables
 const s = selektor => document.getElementById(selektor);
 const openWeatherMapId = 'e35f9d03b9cf7b1e57d49c09254d495b';
 
-const message = s('current-weather-conditions')
+const message = s('current-weather-conditions');
 const search = s('search');
 const cityName = s('enter-location');
 const currentWeather = s('current-weather-conditions');
@@ -17,14 +18,16 @@ const clouds = s('clouds');
 const forecast = s('forecast');
 const weekly = s('weekly');
 
+// Function for geting Geolocation from Browser
 function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getPosition, showError);
     } else { 
       document.getElementById("current-weather-conditions").innerHTML = "Unable to retrieve location. Try manual search.";
     }
-  }
+ }
 
+// Function for possible Errors
 function showError(error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:
@@ -40,8 +43,9 @@ function showError(error) {
         document.getElementById("current-weather-conditions").innerHTML = "An unknown error occurred."
         break;
     }
-  }
+}
 
+// Function for getting weather and forecast data using Geolocation
   function getPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;    
@@ -57,8 +61,7 @@ function showError(error) {
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
         weatherDescription.innerHTML = response.weather[0].main;
         pressure.innerHTML = response.main.pressure + " mBar";
-        humidity.innerHTML = response.main.humidity + " %";    
-
+        humidity.innerHTML = response.main.humidity + " %";
         windDirectionSpeed.innerHTML = degToDir(response.wind.deg) + "&nbsp&nbsp" + response.wind.speed + " m/s";
         clouds.innerHTML = response.clouds.all  + " %";
     })    
@@ -66,7 +69,6 @@ function showError(error) {
     fetch(geoUrlForecast)
     .then(response => response.json())
     .then(function (response) { 
-
         let dateOfWeek = "";
         const today = new Date().toISOString().slice(0, 10);
         const timeOfDayForCond = '15:00:00';
@@ -85,8 +87,7 @@ function showError(error) {
         weekly.innerHTML = dateOfWeek;
     })      
   }
-
-
+// Function for getting weather and forcast data using input
 function weatherNow(){ 
     const city = cityName.value;
     const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${openWeatherMapId}`;
@@ -142,7 +143,8 @@ function weatherNow(){
     cityName.value = "Location... ";
         
     }
-
+    
+// Convert wind degrees to direction 
     function degToDir(num){
         var val = Math.floor((num / 22.5) + 0.5);
         var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
@@ -160,6 +162,7 @@ document.getElementById("enter-location").addEventListener("keyup", function(eve
      event.preventDefault();
 });
 
+// Function for Refreshing Weather data every 30minutes
 function refreshWeatherData() {
   setInterval(function(){location.reload()}, 1800000);
 }
