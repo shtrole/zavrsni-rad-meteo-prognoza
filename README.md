@@ -20,6 +20,8 @@ Dostupna je i prognoza vremena za naredne dane sa osnovnim podacima o temperatur
 
 Vremenski podaci se automatski ažuriraju na svakih 30 minuta.
 
+Korišćene su sve tri glavne tehnologije zahtevane zadatkom HTML, CSS (osnovni i Bootstrap) kao i JavaScript.
+
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Final project at Cody Academy: Weather forecast for a particular city and date
@@ -42,3 +44,5 @@ The app displays the following data for each city:
 A forecast is also available for the next days with basic weather and temperature data based on the forecast for a particular day at 3pm.
 
 Weather data is automatically updated every 30 minutes.
+
+All three required main technologies were used HTML, CSS (basic and Bootstrap) and JavaScript.
