@@ -1,6 +1,7 @@
 body {
     box-sizing: border-box;
-    height: 80vh; 
+    height: 100vh; 
+    font-family: 'Roboto', sans-serif;    
 }
 
 .bigger-font {
