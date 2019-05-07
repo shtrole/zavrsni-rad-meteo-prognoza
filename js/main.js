@@ -18,7 +18,7 @@ const clouds = s('clouds');
 const forecast = s('forecast');
 const weekly = s('weekly');
 
-// Function for geting Geolocation from Browser
+// Function for getting Geolocation from Browser
 function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getPosition, showError);
