@@ -23,7 +23,7 @@ function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getPosition, showError);
     } else { 
-      document.getElementById("current-weather-conditions").innerHTML = "Unable to retrieve location. Try manual search.";
+      document.getElementById("locationTitle").innerHTML = "Unable to retrieve location. Try manual search.";
     }
  }
 
@@ -31,16 +31,16 @@ function getLocation() {
 function showError(error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:
-         document.getElementById("current-weather-conditions").innerHTML = "User denied the request for Geolocation."
+         document.getElementById("location-title").innerHTML = "User denied the request for Geolocation."
         break;
       case error.POSITION_UNAVAILABLE:
-        document.getElementById("current-weather-conditions").innerHTML = "Location information is unavailable."
+        document.getElementById("location-title").innerHTML = "Location information is unavailable."
         break;
       case error.TIMEOUT:
-         document.getElementById("current-weather-conditions").innerHTML = "The request to get user location timed out."
+         document.getElementById("location-title").innerHTML = "The request to get user location timed out."
         break;
       case error.UNKNOWN_ERROR:
-        document.getElementById("current-weather-conditions").innerHTML = "An unknown error occurred."
+        document.getElementById("location-title").innerHTML = "An unknown error occurred."
         break;
     }
 }
@@ -97,7 +97,6 @@ function weatherNow(){
     .then(response => response.json())
     .then(function (response) {
         if (response.cod == 404) {
-            currentWeather = locationTitle + temperatureDegree + weatherIcon + weatherDescription;
             locationTitle.innerHTML = "Location not found. Try again..." + "<br><br><br>" + `<i class="fas fa-cloud-rain fa-5x"></i>`;
             temperatureDegree.innerHTML = "";
             weatherIcon.innerHTML = "";
@@ -106,8 +105,7 @@ function weatherNow(){
             forecast.classList.add("hide");
             weekly.innerHTML = "";
           } 
-        else if (response.cod == 200){   
-        currentWeather = locationTitle + temperatureDegree + weatherIcon + weatherDescription; 
+        else if (response.cod == 200){
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
