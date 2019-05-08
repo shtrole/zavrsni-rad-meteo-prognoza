@@ -56,7 +56,7 @@ function showError(error) {
     fetch(geoUrlWeather)
     .then(response => response.json() )
     .then(function (response) {
-        document.getElementById("current-weather-conditions").innerHTML = " ";
+        document.getElementById("current-weather-conditions").innerHTML = locationTitle + temperatureDegree + weatherIcon + weatherDescription;
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
