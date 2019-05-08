@@ -56,7 +56,6 @@ function showError(error) {
     fetch(geoUrlWeather)
     .then(response => response.json() )
     .then(function (response) {
-        document.getElementById("current-weather-conditions").innerHTML = locationTitle + temperatureDegree + weatherIcon + weatherDescription;
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
@@ -98,6 +97,7 @@ function weatherNow(){
     .then(response => response.json())
     .then(function (response) {
         if (response.cod == 404) {
+            document.getElementById("current-weather-conditions").innerHTML = locationTitle + temperatureDegree + weatherIcon + weatherDescription;
             locationTitle.innerHTML = "Location not found. Try again..." + "<br><br><br>" + `<i class="fas fa-cloud-rain fa-5x"></i>`;
             temperatureDegree.innerHTML = "";
             weatherIcon.innerHTML = "";
@@ -106,7 +106,8 @@ function weatherNow(){
             forecast.classList.add("hide");
             weekly.innerHTML = "";
           } 
-        else if (response.cod == 200){        
+        else if (response.cod == 200){   
+        document.getElementById("current-weather-conditions").innerHTML = locationTitle + temperatureDegree + weatherIcon + weatherDescription;    
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
