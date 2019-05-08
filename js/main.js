@@ -107,7 +107,7 @@ function weatherNow(){
             weekly.innerHTML = "";
           } 
         else if (response.cod == 200){   
-        document.getElementById("current-weather-conditions").innerHTML = locationTitle + temperatureDegree + weatherIcon + weatherDescription;    
+        document.getElementById("current-weather-conditions").innerHTML = " ";    
         locationTitle.innerHTML = response.name + ', ' + response.sys.country;
         temperatureDegree.innerHTML = response.main.temp.toFixed(0) + "&#186";
         weatherIcon.innerHTML = `<img src="${'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png'}">`;
