@@ -31,16 +31,16 @@ function getLocation() {
 function showError(error) {
     switch(error.code) {
       case error.PERMISSION_DENIED:
-         document.getElementById("location-title").innerHTML = "User denied the request for Geolocation."
+         document.getElementById("location-title").innerHTML = "User denied the request for Geolocation. Try manual search."
         break;
       case error.POSITION_UNAVAILABLE:
-        document.getElementById("location-title").innerHTML = "Location information is unavailable."
+        document.getElementById("location-title").innerHTML = "Location information is unavailable. Try manual search."
         break;
       case error.TIMEOUT:
-         document.getElementById("location-title").innerHTML = "The request to get user location timed out."
+         document.getElementById("location-title").innerHTML = "The request to get user location timed out. Try manual search."
         break;
       case error.UNKNOWN_ERROR:
-        document.getElementById("location-title").innerHTML = "An unknown error occurred."
+        document.getElementById("location-title").innerHTML = "An unknown error occurred. Try manual search."
         break;
     }
 }
